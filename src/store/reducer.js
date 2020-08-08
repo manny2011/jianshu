@@ -1,20 +1,8 @@
+import { combineReducers } from 'redux-immutable';//把最外层的state对象也变成immutable对象
+import {reducer as HeaderReducer } from '../common/header/store/index';
 
-const defaultState = {
-  focused: false,
-};
-const reducer = (state = defaultState, action) => {
-  console.log(action.type);
-  if (action.type === "search_focus") {
-    return {
-      focused: true,
-    }
-  }
-  if (action.type === "search_blur") {
-    return {
-      focused: false,
-    }
-  }
-  return state;
-}
+const reducers = combineReducers({
+  HeaderReducer,
 
-export default reducer;
+});
+export default reducers;

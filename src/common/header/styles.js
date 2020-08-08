@@ -45,6 +45,7 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
     float:left;
     position:relative;
+    margin-left:20px;//nice
     .iconfont{
       position:absolute;
       background:#eee;
@@ -80,7 +81,6 @@ export const NavSearch = styled.input.attrs({
   width:160px;
   height:38px;
   margin:9px 0px;
-  margin-left:20px;
   border:none;
   border-radius:19px;
   outline:none;
@@ -93,6 +93,47 @@ export const NavSearch = styled.input.attrs({
   }
   &.focused{
     width:260px;
+  }
+`;
+
+export const SearchInfo = styled.div`
+  position:absolute;
+  left:0;
+  top:56px;
+  padding:20px 5px;
+  // height:100px;
+  width:220px;
+  box-shadow:0 0 8px rgba(0,0,0,.2);
+`;
+
+export const SearchInfoList = styled.div`
+  margin-top:10px;
+  overflow:hidden;//外层父容器不能指定高度，让其自适应子元素的高度，还得熟悉这个特性
+`;
+
+export const SearchInfoTitle = styled.span`
+  font-size:14px;
+  color:#969696;
+`;
+
+export const SearchInfoSwitch = styled.span`
+  float:right;
+  font-size:14px;
+  color:#969696;
+`;
+
+export const SearchInfoItem = styled.a`
+  display:block;
+  float:left;
+  font-size:14px;
+  // width:20%;
+  color:#969696;
+  border:1px solid #999;
+  margin:5px 5px;
+  padding:10px 5px;
+  border-radius:3px;
+  &:hover{
+    background:green;
   }
 `;
 
