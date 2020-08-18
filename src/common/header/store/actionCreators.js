@@ -44,8 +44,9 @@ export const mouseLeave = ()=>{
     type: constants.MOUSE_LEAVE,
   }
 }
-export const handleChangePage = ()=>{
+export const handleChangePage = (spinIcon)=>{
   return {
     type: constants.CHANGE_PAGE,
+    spinIcon:spinIcon,
   }
 }
