@@ -46,7 +46,7 @@ export const SearchWrapper = styled.div`
     float:left;
     position:relative;
     margin-left:20px;//nice
-    .iconfont{
+    .zoom{
       position:absolute;
       background:#eee;
       width:30px;
@@ -117,9 +117,16 @@ export const SearchInfoTitle = styled.span`
 `;
 
 export const SearchInfoSwitch = styled.span`
-  float:right;
+  float:right;//?由inline变成了inline-block？
   font-size:14px;
   color:#969696;
+  .spin{
+    float:left;
+    // display:block;//只有block才能进行transform变换？！
+    margin-right:10px;
+    transition:all .5s ease-in 0s;//定义过渡动画的参数，即如何动 delay必须有单位，即使是0; 0s
+    // transform:rotate(30deg); //定义动哪里
+  }
 `;
 
 export const SearchInfoItem = styled.a`

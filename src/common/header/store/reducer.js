@@ -29,6 +29,16 @@ const reducer = (state = defaultState, action) => {//统一把更新state的数�
     case constants.MOUSE_LEAVE:
       return state.set('ifMouseIn', false);
     case constants.CHANGE_PAGE:
+      console.log(action.spinIcon);
+      let angle = action.spinIcon.style.transform.replace(/[^0-9]/ig,"");//这个正则规则先不用学，后面看
+      console.log(angle);
+      if(angle){//false的一种
+        angle = parseInt(angle,10);
+      }else{
+        angle=0;
+      }
+      action.spinIcon.style.transform = 'rotate('+(angle+360)+'deg)';
+      console.log("angle=" + angle);
       let page = state.get('page')
       const totalPage = state.get('totalPage')
       if (++page < totalPage)

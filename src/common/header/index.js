@@ -22,17 +22,21 @@ class Header extends Component {
   //react中的条件渲染控制
   getSearchInfo = () => {
     const { ifMouseIn, focused, data, page, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props;
-    if(data.length ===0) return null;//这时就不会报下面的key值重复，是因为最开始没数据时，key都为undefined
+    if (data.length === 0) return null;//这时就不会报下面的key值重复，是因为最开始没数据时，key都为undefined
     if (focused || ifMouseIn) {
       const infoList = [];
       for (let i = 6 * page; i < 6 * (page + 1); i++) {
         infoList.push(<SearchInfoItem key={data[i]}>{data[i]}</SearchInfoItem>)
-      } 
+      }
       return (<SearchInfo
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
         <SearchInfoTitle>热门搜索</SearchInfoTitle>
-        <SearchInfoSwitch onClick={handleChangePage}>换一批</SearchInfoSwitch>
+
+        <SearchInfoSwitch onClick={() => handleChangePage(this.spinIcon)}>
+          <i className="iconfont spin" ref={(element) => { this.spinIcon = element }}>&#xe606;</i>
+          换一批
+        </SearchInfoSwitch>
         <SearchInfoList>
           {
             infoList
@@ -67,7 +71,7 @@ class Header extends Component {
                 onFocus={handleOnFocused}
                 onBlur={handleOnBlur} />
             </CSSTransition>
-            <i className={focused ? "focused iconfont" : "iconfont"}>&#xe60b;</i>
+            <i className={focused ? "focused iconfont zoom" : "iconfont zoom"}>&#xe60b;</i>
             {this.getSearchInfo()}
           </SearchWrapper>
         </Nav>
@@ -108,8 +112,8 @@ const mapDispatch2Prop = (dispatch) => {
     handleMouseLeave() {
       dispatch(actionCreators.mouseLeave());
     },
-    handleChangePage() {
-      dispatch(actionCreators.handleChangePage());
+    handleChangePage(spin) {
+      dispatch(actionCreators.handleChangePage(spin));//统一在reducer中处理各种逻辑，同步的&异步的
     }
   }
 }
