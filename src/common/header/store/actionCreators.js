@@ -47,6 +47,6 @@ export const mouseLeave = ()=>{
 export const handleChangePage = (spinIcon)=>{
   return {
     type: constants.CHANGE_PAGE,
-    spinIcon:spinIcon,
+    spinIcon:spinIcon,//这里可以只写spinIcon即可
   }
 }

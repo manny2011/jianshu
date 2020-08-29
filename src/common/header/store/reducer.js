@@ -40,7 +40,7 @@ const reducer = (state = defaultState, action) => {//统一把更新state的数�
       action.spinIcon.style.transform = 'rotate('+(angle+360)+'deg)';
       console.log("angle=" + angle);
       let page = state.get('page')
-      const totalPage = state.get('totalPage')
+      const totalPage = state.get('totalPage');
       if (++page < totalPage)
         return state.set('page', page);
       else

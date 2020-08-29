@@ -52,7 +52,7 @@ class Header extends Component {
   }
   render() {
     //结构匹配赋值
-    const { focused, handleOnFocused, handleOnBlur } = this.props;
+    const { focused, handleOnFocused, handleOnBlur,data } = this.props;
     return (
       <HeaderWrapper>
         <Logo href="/" />
@@ -68,7 +68,7 @@ class Header extends Component {
               timeout={300}
             >
               <NavSearch className={focused ? "focused" : ""}
-                onFocus={handleOnFocused}
+                onFocus={()=>{handleOnFocused(data)}}
                 onBlur={handleOnBlur} />
             </CSSTransition>
             <i className={focused ? "focused iconfont zoom" : "iconfont zoom"}>&#xe60b;</i>
@@ -91,7 +91,7 @@ const mapState2Prop = (state) => {//统一在此把immutable对象转换为普�
   //统一在reducer中把js对象转换成immutable对象
   return {
     focused: state.getIn(['HeaderReducer', 'focused']),
-    data: state.get('HeaderReducer').get('data').toJS(),
+    data: state.get('HeaderReducer').get('data').toJS(),//统一在这把immutable对象转换为js对象！
     ifMouseIn: state.get('HeaderReducer').get('ifMouseIn'),
     page: state.get('HeaderReducer').get('page'),
     // focused: state.get('HeaderReducer').get('focused'),
@@ -99,9 +99,12 @@ const mapState2Prop = (state) => {//统一在此把immutable对象转换为普�
 }
 const mapDispatch2Prop = (dispatch) => {
   return {
-    handleOnFocused() {
+    handleOnFocused(data) {
       dispatch(actionCreators.searchFocus());
-      dispatch(actionCreators.getSearchList())
+      console.log(data);
+      if(data.length===0){//因为我们在mapState2Prop中已经将immutable的list转换成js的array对象，所以只有length属性，没有size属性了。
+        dispatch(actionCreators.getSearchList());
+      }
     },
     handleOnBlur() {
       dispatch(actionCreators.searchBlur());
