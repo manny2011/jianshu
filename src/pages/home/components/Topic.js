@@ -12,8 +12,8 @@ class Topic extends Component {
         {
           this.props.topicData.map((item) => {
             return (
-              <TopicItem >
-                <img className='topic-item-img' src={item.imgUrl} />
+              <TopicItem key={item.id}>
+                <img className='topic-item-img' src={item.imgUrl} alt=""/>
                 {item.title}
               </TopicItem>
             )

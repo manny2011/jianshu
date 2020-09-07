@@ -4,7 +4,6 @@ import logo from '../../statics/logo.png';
 export const HeaderWrapper = styled.div`
   height:56px;
   border-bottom: 1px solid #f0f0f0;
-
 `;
 
 export const Logo = styled.a`
@@ -104,6 +103,9 @@ export const SearchInfo = styled.div`
   // height:100px;
   width:220px;
   box-shadow:0 0 8px rgba(0,0,0,.2);
+  background:#fff;
+  border:1px solid #f0f0f0;
+  border-radius:4px;
 `;
 
 export const SearchInfoList = styled.div`
