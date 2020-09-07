@@ -6,6 +6,7 @@ const defaultState = fromJS({//immutable会把js对象以及其内层的各个js
   articleData: [],
   recommendData: [],
   page: 0,
+  ifShowBack2TopBtn:false,
 });
 const reducer = (state = defaultState, action) => {//统一把更新state的数据在reducer中转换成immutable对象后再更新state
   console.log(action);
@@ -18,6 +19,9 @@ const reducer = (state = defaultState, action) => {//统一把更新state的数�
         recommendData:fromJS(action.recommendData),
         page:fromJS(state.get('page') + 1),//int 类型的变量不需要toJS()!
       });
+    case constants.SCROLL2TOP_FLAG:
+      return state.set('ifShowBack2TopBtn',action.data);
+      
     default:
       return state;
   }

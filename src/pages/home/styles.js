@@ -113,4 +113,18 @@ export const RecommendItem = styled.div`
   background-size:contain;//控制背景图的大小
 `;
 
+export const Back2Top = styled.div`
+  width:100px;
+  height:100px;
+  position:fixed;
+  right:100px;
+  bottom:100px;
+  text-align:center;
+  line-height:100px;
+  border:1px solid #999;
+  color:red;
+  font-size:14px;
+  font-style:bold;
+`;
+
 

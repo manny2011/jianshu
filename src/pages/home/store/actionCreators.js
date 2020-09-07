@@ -23,3 +23,7 @@ export const getHomeData = (page) => {//注意这里有两个函数，第一个�
       console.log(err);
     });
 }
+export const setIfShowBack2TopBtn = (ifShow) =>({
+  type:constants.SCROLL2TOP_FLAG,
+  data:ifShow,
+})
