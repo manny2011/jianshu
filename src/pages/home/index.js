@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,PureComponent } from 'react';
 import {connect} from 'react-redux';
 import {
   HomeWrapper,
@@ -12,7 +12,7 @@ import Recommend from './components/Recommend';
 import {actionCreators} from './store/index';
 import { Back2Top } from './styles';
  
-class Home extends Component {
+class Home extends PureComponent {//虚拟dom的比对 shouldComponentUpdate->bool
 
   Back2Top(){
     window.scrollTo(0,0);
@@ -30,7 +30,7 @@ class Home extends Component {
         <Writter />
       </HomeRight>
       {//三目运算符 的使用
-          this.props.ifShowBack2TopBtn ? <Back2Top onClick={()=>this.Back2Top()}>回到顶部</Back2Top> : null
+          this.props.ifShowBack2TopBtn ? <Back2Top onClick={this.Back2Top}>回到顶部</Back2Top> : null
       }
       
     </HomeWrapper>

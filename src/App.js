@@ -9,11 +9,11 @@ import Home from './pages/home';
 function App() {
   return (
     <Provider store={store}>
-      <Header />
-      <Router>
+      <Router>{/*you should Not use Link outSide Router Component*/}
+        <Header />
         <Route path="/" exact component={Home}>
         </Route>
-        <Route path="/detail" exact component={Detail}>
+        <Route path="/detail/:id" exact component={Detail}>{/*url 参数匹配*/}
         </Route>
       </Router>
     </Provider>

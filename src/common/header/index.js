@@ -17,6 +17,7 @@ import {
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { actionCreators } from './store/index';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   //react中的条件渲染控制
@@ -52,10 +53,12 @@ class Header extends Component {
   }
   render() {
     //结构匹配赋值
-    const { focused, handleOnFocused, handleOnBlur,data } = this.props;
+    const { focused, handleOnFocused, handleOnBlur, data } = this.props;
     return (
       <HeaderWrapper>
-        <Logo href="/" />
+        <Link to='/'>
+          <Logo/>
+        </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
@@ -68,7 +71,7 @@ class Header extends Component {
               timeout={300}
             >
               <NavSearch className={focused ? "focused" : ""}
-                onFocus={()=>{handleOnFocused(data)}}
+                onFocus={() => { handleOnFocused(data) }}
                 onBlur={handleOnBlur} />
             </CSSTransition>
             <i className={focused ? "focused iconfont zoom" : "iconfont zoom"}>&#xe60b;</i>
@@ -102,7 +105,7 @@ const mapDispatch2Prop = (dispatch) => {
     handleOnFocused(data) {
       dispatch(actionCreators.searchFocus());
       console.log(data);
-      if(data.length===0){//因为我们在mapState2Prop中已经将immutable的list转换成js的array对象，所以只有length属性，没有size属性了。
+      if (data.length === 0) {//因为我们在mapState2Prop中已经将immutable的list转换成js的array对象，所以只有length属性，没有size属性了。
         dispatch(actionCreators.getSearchList());
       }
     },
