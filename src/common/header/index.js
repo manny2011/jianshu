@@ -17,6 +17,7 @@ import {
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { actionCreators } from './store/index';
+import { actionCreators as loginActionCreators } from '../../pages/login/store/index';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
@@ -57,12 +58,16 @@ class Header extends Component {
     return (
       <HeaderWrapper>
         <Link to='/'>
-          <Logo/>
+          <Logo />
         </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
-          <NavItem className="right">登陆</NavItem>
+          {
+            this.props.loginStatus ?
+              <NavItem className="right" onClick={()=>{this.props.logout()}}>退出</NavItem> :
+              <Link to='/login'><NavItem className="right">登陆</NavItem></Link>
+          }
           <NavItem className="right">Aa</NavItem>
           <SearchWrapper>
             <CSSTransition
@@ -97,6 +102,7 @@ const mapState2Prop = (state) => {//统一在此把immutable对象转换为普�
     data: state.get('HeaderReducer').get('data').toJS(),//统一在这把immutable对象转换为js对象！
     ifMouseIn: state.get('HeaderReducer').get('ifMouseIn'),
     page: state.get('HeaderReducer').get('page'),
+    loginStatus: state.get('LoginReducer').get('loginStatus'),
     // focused: state.get('HeaderReducer').get('focused'),
   }
 }
@@ -120,6 +126,9 @@ const mapDispatch2Prop = (dispatch) => {
     },
     handleChangePage(spin) {
       dispatch(actionCreators.handleChangePage(spin));//统一在reducer中处理各种逻辑，同步的&异步的
+    },
+    logout(){
+      dispatch(loginActionCreators.Logout());
     }
   }
 }

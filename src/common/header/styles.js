@@ -43,7 +43,8 @@ export const NavItem = styled.div`
 
 export const SearchWrapper = styled.div`
     float:left;
-    position:relative;
+    position:relative;//必须是已定位的容器，才能作为绝对定位元素的父容器
+    top:0px;
     margin-left:20px;//nice
     .zoom{
       position:absolute;
@@ -97,7 +98,8 @@ export const NavSearch = styled.input.attrs({
 
 export const SearchInfo = styled.div`
   position:absolute;
-  left:0;
+  z-index:1;
+  left:0px;
   top:56px;
   padding:20px 5px;
   // height:100px;
