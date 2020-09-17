@@ -65,7 +65,7 @@ class Header extends Component {
           <NavItem className="left">下载App</NavItem>
           {
             this.props.loginStatus ?
-              <NavItem className="right" onClick={()=>{this.props.logout()}}>退出</NavItem> :
+              <NavItem className="right" onClick={() => { this.props.logout() }}>退出</NavItem> :
               <Link to='/login'><NavItem className="right">登陆</NavItem></Link>
           }
           <NavItem className="right">Aa</NavItem>
@@ -84,10 +84,12 @@ class Header extends Component {
           </SearchWrapper>
         </Nav>
         <Addition>
-          <Button className="writting">
-            <i className="iconfont">&#xe708;</i>
+          <Link to='/write'> 
+            <Button className="writting">
+              <i className="iconfont">&#xe708;</i>
             写文章
             </Button>
+          </Link>
           <Button className="reg">注册</Button>
         </Addition>
       </HeaderWrapper>
@@ -127,7 +129,7 @@ const mapDispatch2Prop = (dispatch) => {
     handleChangePage(spin) {
       dispatch(actionCreators.handleChangePage(spin));//统一在reducer中处理各种逻辑，同步的&异步的
     },
-    logout(){
+    logout() {
       dispatch(loginActionCreators.Logout());
     }
   }
