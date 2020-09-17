@@ -3,9 +3,9 @@ import Header from './common/header/index';
 import { Provider } from 'react-redux';
 import store from './store/index';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Detail from './pages/detail';
+import Detail from './pages/detail/loadable';
 import Home from './pages/home';
-import Login from './pages/login';
+import Login from './pages/login/loadable';
 import write from './pages/write';
 import { reducer } from './common/header/store';
 

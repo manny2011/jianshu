@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DetailWrapper, Header, Content, Author ,AuthorTextWrapper} from './styles';
+import { DetailWrapper, Header, Content, Author, AuthorTextWrapper } from './styles';
 import { connect } from 'react-redux';
 import { actionCreators } from './store/index';
 
@@ -40,3 +40,4 @@ const mapDispatch2Props = (dispatch) => ({
 })
 
 export default connect(mapState2Props, mapDispatch2Props)(Detail);
+
