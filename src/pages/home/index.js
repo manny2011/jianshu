@@ -6,7 +6,7 @@ import {
   HomeRight,
 } from './styles';
 import List from './components/List';
-import Writter from './components/Writter';
+import Writter from './components/writer/Writter';
 import Topic from './components/Topic';
 import Recommend from './components/Recommend';
 import {actionCreators} from './store/index';
