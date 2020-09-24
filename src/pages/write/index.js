@@ -1,13 +1,15 @@
 import React,{Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
+import './write.less';
 
 class Write extends Component{
 
   render(){//登陆鉴权
     const {loginStatus}  = this.props;
     if(loginStatus){
-      return <div>this is Writting page</div>
+      return <div className='container'>
+      </div>
     }else{
       return <Redirect to='/login'/>
     }

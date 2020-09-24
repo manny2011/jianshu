@@ -6,6 +6,7 @@ const homeData = (data)=>({
   topicData:data.topicList,
   articleData:data.articleList,
   recommendData:data.recommendList,
+  writerData:data.writerData,
 })
 
 export const getHomeData = (page) => {//注意这里有两个函数，第一个是给组件调用的，第二个是给thunk调用的！

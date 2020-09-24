@@ -14,7 +14,7 @@ class Detail extends Component {
     return <DetailWrapper>
       <Header>{this.props.title}</Header>
       <Author>
-        <a><img class="_13D2Eh" src="https://upload.jianshu.io/users/upload_avatars/20408088/1e2dc979-b72d-43fd-9370-6720b2f4c236.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp" /></a>
+        <a href=''><img class="_13D2Eh" alt='thumnail' src="https://upload.jianshu.io/users/upload_avatars/20408088/1e2dc979-b72d-43fd-9370-6720b2f4c236.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp" /></a>
         <AuthorTextWrapper>
           <div>柠檬精的故事会</div>
           <div>2020.06.04 16:57:21字数 683</div>

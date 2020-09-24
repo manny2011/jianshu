@@ -1,0 +1,44 @@
+//不用flex,用传统布局也可以将link-des-container容器垂直居中在父容器中，用到了绝对定位与transformY(-50%)相结合 实现了！
+
+.link-container {
+  // display: flex;
+  display: block;
+  background-color: orange;
+  width: 100%;
+  box-sizing: border-box; //设置高&宽，默认是内容区域的大小；指定此属性，就包含了padding/margin区域；content-box不包含padding/margin/border
+  // flex-direction: row;
+  // align-items: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  padding: 10px 22px;
+  margin-bottom: 30px;
+  position: relative;
+  left: 0px;
+  .link-img {
+    width: 60px;
+    height: 60px;
+    opacity: 0.85;
+    vertical-align: middle;
+  }
+  .link-des-container {
+    background-color: orangered;
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: middle;
+    // position: absolute;
+    // top:50%;
+    // transform: translate(0%,-50%);
+    // transform: translateY(-50%);
+
+    .link-des-top-text {
+      font-size: 100%;
+      color: #333;
+    }
+    .link-des-bottom-text {
+      display: inline-block;
+      font-size: 13px;
+      color: #999;
+      margin-top: 10px;
+    }
+  }
+}

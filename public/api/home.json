@@ -38,11 +38,24 @@
 			"id": 2,
 			"imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
 		}, {
-			"id": 2,
+			"id": 3,
 			"imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
 		}, {
-			"id": 2,
+			"id": 4,
 			"imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
+		}],
+		"writerData":[{
+			"id":1,
+			"topTitle":"卢璐说",
+			"bottomTitle":"写了1739.7k字 · 33.1k喜欢"
+		},{
+			"id":2,
+			"topTitle":"董克平日记",
+			"bottomTitle":"写了1105.2k字 · 4.7k喜欢"
+		},{
+			"id":3,
+			"topTitle":"写了1105.2k字 · 4.7k喜欢",
+			"bottomTitle":"写了389.4k字 · 101.9k喜欢"
 		}]
 	}
 }

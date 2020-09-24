@@ -1,4 +1,4 @@
-import React, { Component,PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import {connect} from 'react-redux';
 import {
   HomeWrapper,
@@ -11,7 +11,9 @@ import Topic from './components/Topic';
 import Recommend from './components/Recommend';
 import {actionCreators} from './store/index';
 import { Back2Top } from './styles';
- 
+import DownloadLink from './components/link/DownloadLink';
+import Footer from './components/footer/index';
+
 class Home extends PureComponent {//虚拟dom的比对 shouldComponentUpdate->bool
 
   Back2Top(){
@@ -27,12 +29,13 @@ class Home extends PureComponent {//虚拟dom的比对 shouldComponentUpdate->bo
       </HomeLeft>
       <HomeRight >
         <Recommend />
+        <DownloadLink />
         <Writter />
       </HomeRight>
       {//三目运算符 的使用
           this.props.ifShowBack2TopBtn ? <Back2Top onClick={this.Back2Top}>回到顶部</Back2Top> : null
       }
-      
+      <Footer/>
     </HomeWrapper>
   }
 

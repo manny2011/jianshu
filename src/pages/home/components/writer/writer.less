@@ -1,11 +1,38 @@
+@base-color:#333;
+@base-fontSize:12px;
 
-.section_container{
+.section_container{//似乎设置为flex后，其直接子元素都为inline-block元素了，padding/margin都生效了！
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
-  background-color: red;
   .section_img{
-    display: inline;
+    // display: inline-block;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
   }
   .section_text_container{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    .section_text_container_top_text{
+      color: @base-color;
+      font-size: 14px;
+    }
+    .section_text_container_bottom_text{
+      color: #969696;
+      font-size: @base-fontSize;
+    }
   }
+  .section_follow{
+    margin-left: auto;
+    color: #42c02e;
+    font-size: 13px;
+    align-self: flex-start;
+    padding: 5px;
+  }
+  
 }

@@ -93,6 +93,7 @@ export const NavSearch = styled.input.attrs({
   }
   &.focused{
     width:260px;
+    border:2px solid green;
   }
 `;
 

@@ -5,6 +5,7 @@ const defaultState = fromJS({//immutable会把js对象以及其内层的各个js
   topicData: [],
   articleData: [],
   recommendData: [],
+  writerData:[],
   page: 0,
   ifShowBack2TopBtn:false,
 });
@@ -14,6 +15,7 @@ const updateHomeState = (state,action)=>{
     topicData: fromJS(action.topicData),
     articleData:fromJS(state.get('articleData').toJS().concat(action.articleData)),
     recommendData:fromJS(action.recommendData),
+    writerData:fromJS(action.writerData),
     page:fromJS(state.get('page') + 1),//int 类型的变量不需要toJS()!
   });
 }
