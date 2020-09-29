@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { DetailWrapper, Header, Content, Author, AuthorTextWrapper } from './styles';
 import { connect } from 'react-redux';
 import { actionCreators } from './store/index';
+import { useParams } from 'react-router-dom';
 
 class Detail extends Component {
 
-  componentDidMount() {
+  componentDidMount() {//使用hooks：useParams改写,but got this ERROR:hooks can only be called inside the body A function Component!
     const id = this.props.match.params.id;
+    // const {id} = useParams();
+    console.log("id= "+id);
+    console.log(this.props);
     this.props.getDetailData(id);
   }
 

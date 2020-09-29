@@ -65,7 +65,10 @@ export const ListWrapper = styled.div`
   }
 `;
 
-export const ListInfo = styled.div`
+export const ListInfo = styled.div.attrs(props=>{
+  console.log('test...');
+  console.log(props.children);
+})`
   width:475px;
 
   .title{

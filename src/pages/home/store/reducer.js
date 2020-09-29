@@ -21,7 +21,7 @@ const updateHomeState = (state,action)=>{
 }
 
 const reducer = (state = defaultState, action) => {//统一把更新state的数据在reducer中转换成immutable对象后再更新state
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case constants.HOME_DATA:
       console.log(action);
